@@ -1,3 +1,126 @@
-<HTML>
-<body><p>HI</p></body>
-</HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matt Games</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Notes:
+        Google Fonts loads Roboto for modern typography.
+        We import weights 400 (normal) and 700 (bold). -->
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Notes:
+        Link to external CSS file for styling. Keeping HTML and CSS separate improves maintainability. -->
+    <link rel="stylesheet" href="styles.css">
+
+    
+</head>
+<body>
+
+    <!-- HEADER -->
+    <!-- Notes:
+        <header> defines the top section for page title or intro content. -->
+    <header>
+        Matt Games
+    </header>
+
+
+
+    <!-- NAVIGATION BAR -->
+    <!-- Notes:
+        <nav> contains links to different sections of the site.
+        <a> tags define clickable links. -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+        <a href="https://www.crouton.net/">Crouton</a>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <!-- Notes:
+        Flex container that holds sidebar and main content side by side (or stacked on mobile). -->
+    <div class="main-container">
+
+        <!-- SIDEBAR -->
+        <!-- Notes:
+            <aside> for profile photo, bio, and extra info. Sticky positioning keeps it visible while scrolling. -->
+        <aside>
+        <img src="https://picsum.photos/200" alt="Profile Photo">
+
+        <!-- BIO SECTION -->
+        <!-- Notes:
+            <section> groups related content.
+            <h2> is a heading.
+            <p> contains text. -->
+        <section class="bio">
+            <h2>About Me</h2>
+            <p>Use a collapse/expand button so users on mobile/PC can minimize sidebar.</p>
+        </section>
+
+        <!-- ADDITIONAL SIDEBAR INFO -->
+        <section class="sidebar-extra">
+            <h2>More Info</h2>
+            <p>Sidebar is fixed and scrollable. Add sections as needed.</p>
+        </section>
+        </aside>
+
+        <!-- CONTENT AREA -->
+        <!-- Notes:
+            Main content containing scrollable blog and photo gallery. -->
+        <div class="content">
+
+        <!-- BLOG BOX -->
+        <!-- Notes:
+            Scrollable container with fixed header to always show section title. -->
+        <div class="blog-box">
+            <div class="box-header">
+            <h2>Blog Section</h2>
+            </div>
+            <div class="box-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <p>Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p>
+            <p>Curabitur et ligula. Ut molestie a, ultricies porta urna.</p>
+            <p>Phasellus non risus vitae justo elementum cursus.</p>
+            <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.</p>
+            <p>Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor.</p>
+            <p>Phasellus ultrices nulla quis nibh. Quisque a lectus.</p>
+            <p>Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</p>
+            <p>Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet.</p>
+            <p>Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.</p>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+            </div>
+        </div>
+
+        <!-- PHOTO GALLERY BOX -->
+        <!-- Notes:
+            Scrollable gallery with uniform images, borders, spacing, and hover effect. -->
+        <div class="photo-gallery-box">
+            <div class="box-header">
+            <h2>Photo Gallery</h2>
+            </div>
+            <div class="box-content photo-gallery">
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 1">
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 2">
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 3">
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 4">
+            </div>
+        </div>
+
+        </div> <!-- End of content -->
+    </div> <!-- End of main-container -->
+
+    <!-- FOOTER -->
+    <!-- Notes:
+        Contains copyright and "made by" button that links to your site.
+        Button floats right on desktop and inline on mobile. -->
+    <footer>
+        &copy; 2026 My Name. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
