@@ -33,12 +33,10 @@
         <nav> contains links to different sections of the site.
         <a> tags define clickable links. -->
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
-        <a href="https://www.crouton.net/">Crouton</a>
+        <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+        <button class="tablinks" onclick="openTab(event, 'Games'),hideGames()">Games</button>
+        <button class="tablinks" onclick="openTab(event, 'Level')">Level Design</button>
+        <button class="tablinks" onclick="openTab(event, 'Other')">Other Projects</button>
     </nav>
 
     <!-- MAIN CONTENT AREA -->
@@ -72,43 +70,100 @@
         <!-- CONTENT AREA -->
         <!-- Notes:
             Main content containing scrollable blog and photo gallery. -->
-        <div class="content">
+        <div id="Home" class="tabcontent" style="display:block;">
 
-        <!-- BLOG BOX -->
+        <!-- ABOUT ME -->
         <!-- Notes:
             Scrollable container with fixed header to always show section title. -->
-        <div class="blog-box">
+        <div class="box">
             <div class="box-header">
-            <h2>Blog Section</h2>
+            <h2>About Me</h2>
             </div>
             <div class="box-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            <p>Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.</p>
-            <p>Curabitur et ligula. Ut molestie a, ultricies porta urna.</p>
-            <p>Phasellus non risus vitae justo elementum cursus.</p>
-            <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.</p>
-            <p>Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor.</p>
-            <p>Phasellus ultrices nulla quis nibh. Quisque a lectus.</p>
-            <p>Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</p>
-            <p>Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet.</p>
-            <p>Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.</p>
-            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+            <p>Welcome to the show! My name is Matthew Shotunde and I am a game developer based in the Niagara Region.</p>
+            <br>
+            <p>I've been studying game development at Brock University and Niagara College for 4 years and I am extremely passionate about the work that I do.</p>
+            <p>I describe myself as a generalist in game development, but I focus primarily on design and programming.</p>
+            <br>
+            <p>Take a look around!</p>
+            <p>If you find anything you like and want to get in touch, you can always shoot me an email or send me a message on LinkedIn.</p>
+            <p>Thank you for visiting!</p>
             </div>
         </div>
 
-        <!-- PHOTO GALLERY BOX -->
+        </div> <!-- END HOME DIV -->
+
+        <div id="Games" class="tabcontent">
+        <!-- GAMES -->
         <!-- Notes:
-            Scrollable gallery with uniform images, borders, spacing, and hover effect. -->
-        <div class="photo-gallery-box">
-            <div class="box-header">
-            <h2>Photo Gallery</h2>
+            Scrollable container with fixed header to always show section title. -->
+        <div role="button" class="half-box" onclick="showGame('Maid')">
+            <div class="box-header" style="background-color:#94e6ff;">
+            <h2>Maid Mayhem</h2>
             </div>
-            <div class="box-content photo-gallery">
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 1">
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 2">
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 3">
-            <img src="https://picsum.photos/seed/picsum/200/300" alt="Gallery Photo 4">
+            <div class="click-box-content">
+            <img src="MaidMayhemPoster.png" style="border-style:outset;border-color:#189cc4;">
+            <p style="text-align:left;"><img src="MaidAppIcon.png" style="width:2.5vw">1st Place People's Choice - Level Up Showcase<br>2nd Place Achievement in Audio - Level Up Showcase</p>
+            <br>
+            <p>Maid Mayhem is a 2-player to 4-player competitive party game where you take on the role of a big buff bald maid.
+                Your task is to clean as much of old lady Twiggy's house as you can in 3 minutes by whacking dirty furniture and hitting away your competition.</p>
             </div>
+        </div>
+
+        <div role="button" class="half-box" onclick="showGame('Dino')">
+            <div class="box-header" style="background-color:#fab0a5;">
+            <h2>Dino Dash</h2>
+            </div>
+            <div class="click-box-content">
+            <img src="DinoDashMenu.png" style="border-style:outset;border-color:#d4341c;">
+            <br><br>
+            <p>Dino Dash is a single-player 2.5D platformer. A little dino gets lost in the jungle and it's your job to help get it back to its nest.
+                Run, jump, and dash through enemies to find a way back home.</p>
+            </div>
+        </div>
+
+        <div role="button" class="half-box" onclick="showGame('Kill')">
+            <div class="box-header" style="background-color:#fadfa5;">
+            <h2>Go Kill This Guy</h2>
+            </div>
+            <div class="click-box-content">
+            <img src="GKTGMain.png" style="border-style:outset;border-color:#cc9a2d;">
+            <br><br>
+            <p>In Go Kill This Guy, take on the role of Hevyn and Hel, an angel-devil duo, as they proceed through tests to acquire their exorcist licence.
+                 Vanquish an array of vile creatures for their many crimes in this short 2D platformer-shooter.</p>
+            </div>
+        </div>
+
+        </div> <!-- END GAMES DIV -->
+
+        <div id="Maid" class="game-detail">
+            <h1>Maid Mayhem</h1>
+            <br>
+            <img src="MaidMayhemPoster.png" style="border-style:outset;border-color:#189cc4;">
+            <br><br>
+            <p>Maid Mayhem is a 2-player to 4-player competitive party game where you take on the role of a big buff bald maid.
+                Your task is to clean as much of old lady Twiggy's house as you can in 3 minutes by whacking dirty furniture and hitting away your competition.</p>
+            <br><br>
+            <p style="text-align: left;"><b>Roles:</b> Creative Director, Designer, General Programmer, 3D Animator</p>
+            <p style="text-align: left;"><b>Project Time Frame:</b> Sept. 2025 - Apr. 2026</p>
+            <p style="text-align: left;"><b>Team Size:</b> 11</p>
+            <p style="text-align: left;"><b>Engine:</b> Unity 6</p>
+            <p style="text-align: left;"><b>Tools Used:</b> C#, 3DS Max, Krita</p>
+            <p style="text-align: left;"><b>Steam Link:</b> <a href="https://store.steampowered.com/app/4329840/Maid_Mayhem/">Maid Mayhem on Steam</a></p>
+            <br><br>
+            <p>This project was made for our final capstone project in the GAME program at Brock University.</p>
+            <p>I took on the role as creative director for the team to lead the overall vision of the game and maintain cohesion between the 
+                mechanics, artistic direction, and audio components to align with the intended player experience.</p>
+        </div>
+
+        <div id="Dino" class="game-detail">
+            <h2>Dino Dash</h2>
+            <p>Well.....</p>
+        </div>
+
+        <div id="Kill" class="game-detail">
+            <h2>Go Kill This Guy</h2>
+            <p>Uh...hey :D</p>
         </div>
 
         </div> <!-- End of content -->
@@ -119,8 +174,43 @@
         Contains copyright and "made by" button that links to your site.
         Button floats right on desktop and inline on mobile. -->
     <footer>
-        &copy; 2026 My Name. All Rights Reserved.
+        &copy; 2026 Matthew Shotunde. All Rights Reserved.
     </footer>
+
+
+    <script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+        hideGames();
+    }
+
+    function showGame(gameName) {
+        var i, gamedetails;
+        gamedetails = document.getElementsByClassName("game-detail")
+        for (i = 0; i < gamedetails.length; i++) {
+            gamedetails[i].style.display = "none";
+        }
+        document.getElementById("Games").style.display = "none";
+        document.getElementById(gameName).style.display = "block";
+    }
+
+    function hideGames() {
+        document.getElementById("Maid").style.display = "none";
+        document.getElementById("Dino").style.display = "none";
+        document.getElementById("Kill").style.display = "none";
+    }
+    </script>
 
 </body>
 </html>
