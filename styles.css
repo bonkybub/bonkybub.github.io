@@ -183,6 +183,16 @@ aside img {
   margin: auto;
   justify-content: center;
   width: 30vw;
+  border-style:outset;
+  border-radius: 16px;
+}
+
+.game-detail video {
+  display: block;
+  margin: auto;
+  justify-content: center;
+  width: 30vw;
+  border-style:outset;
   border-radius: 16px;
 }
 
