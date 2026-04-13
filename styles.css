@@ -129,26 +129,6 @@ aside img {
   overflow: hidden; 
 }
 
-.full-box {
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  display: inline-block;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.half-box {
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  display: inline-block;
-  flex-direction: column;
-  width: 26vw;
-  height: 600px;   /* fixed height for scrolling */
-  overflow: hidden;
-}
-
 .box-header {
   background-color: #eee;
   padding: 0.5rem 1rem;
@@ -163,10 +143,13 @@ aside img {
   flex: 1;
 }
 
-.click-box-content {
-  padding: 1rem;
-  overflow-y: auto;
-  flex: 1;
+.full-box {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .full-box p {
@@ -179,10 +162,45 @@ aside img {
   object-fit: contain;
 }
 
+.half-box {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  flex-direction: column;
+  width: 38vw;
+  height: 700px;   /* fixed height for scrolling */
+  overflow: hidden;
+}
+
 .half-box img {
+  width: 36vw;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.third-box {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  flex-direction: column;
+  width: 26vw;
+  height: 600px;   /* fixed height for scrolling */
+  overflow: hidden;
+}
+
+.third-box img {
   width: 24vw;
   border-radius: 8px;
   object-fit: contain;
+}
+
+.click-box-content {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+  transition: background-color 0.2s;
 }
 
 .click-box-content:hover {
@@ -218,6 +236,21 @@ aside img {
 .game-detail p {
   padding-left: 10vw;
   padding-right: 10vw;
+}
+
+.game-detail button {
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  border: none;
+  border-radius: 100%;
+  background-color: #fff;
+  transition: background-color 0.2s;
+}
+
+.game-detail button:hover {
+  background-color: #ccc;
 }
 
 /* ===== PHOTO GALLERY GRID ===== */

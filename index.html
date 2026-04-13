@@ -51,19 +51,18 @@
         <img src="profile.jpg" alt="Profile Photo">
 
         <!-- BIO SECTION -->
-        <!-- Notes:
-            <section> groups related content.
-            <h2> is a heading.
-            <p> contains text. -->
         <section class="bio">
-            <h2>About Me</h2>
-            <p>Use a collapse/expand button so users on mobile/PC can minimize sidebar.</p>
+            <h2>Contact Me</h2>
+            <p>shotundematthew171@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/matthew-shotunde-42720025a/" target="_blank" rel="noopener noreferrer">linkedin.com/in/matthew-shotunde</a></p>
         </section>
+
+        <br>
 
         <!-- ADDITIONAL SIDEBAR INFO -->
         <section class="sidebar-extra">
-            <h2>More Info</h2>
-            <p>Sidebar is fixed and scrollable. Add sections as needed.</p>
+            <h2>GitHub</h2>
+            <p><a href="https://github.com/bonkybub" target="_blank" rel="noopener noreferrer">github.com/bonkybub</a></p>
         </section>
         </aside>
 
@@ -87,13 +86,13 @@
             </div>
         </div>
 
-        </div> <!-- END HOME DIV -->
+        </div>
+        <!-- END HOME DIV -->
 
+        <!-- START GAMES DIV -->
         <div id="Games" class="tabcontent">
-        <!-- GAMES -->
-        <!-- Notes:
-            Scrollable container with fixed header to always show section title. -->
-        <div role="button" class="half-box" onclick="showGame('Maid')">
+        
+        <div role="button" class="third-box" onclick="showGame('Maid')">
             <div class="box-header" style="background-color:#94e6ff;">
             <h2>Maid Mayhem</h2>
             </div>
@@ -106,7 +105,7 @@
             </div>
         </div>
 
-        <div role="button" class="half-box" onclick="showGame('Dino')">
+        <div role="button" class="third-box" onclick="showGame('Dino')">
             <div class="box-header" style="background-color:#fab0a5;">
             <h2>Dino Dash</h2>
             </div>
@@ -118,7 +117,7 @@
             </div>
         </div>
 
-        <div role="button" class="half-box" onclick="showGame('Kill')">
+        <div role="button" class="third-box" onclick="showGame('Kill')">
             <div class="box-header" style="background-color:#fadfa5;">
             <h2>Go Kill This Guy</h2>
             </div>
@@ -130,10 +129,12 @@
             </div>
         </div>
 
-        </div> <!-- END GAMES DIV -->
+        </div>
+        <!-- END GAMES DIV -->
 
         <!-- START MAID MAYHEM DETAILS -->
         <div id="Maid" class="game-detail">
+            <button onclick="openTab(event, 'Games')">&lt;</button>
             <h1>Maid Mayhem</h1>
             <br>
             <img src="MaidMayhemPoster.png" style="border-color:#189cc4;">
@@ -179,6 +180,7 @@
 
         <!-- START DINO DASH DETAILS -->
         <div id="Dino" class="game-detail">
+            <button onclick="openTab(event, 'Games')">&lt;</button>
             <h1>Dino Dash</h1>
             <br>
             <img src="DDPoster.png" style="width:20vw;border-color:#d4341c;">
@@ -223,6 +225,7 @@
 
         <!-- START GO KILL THIS GUY DETAILS -->
         <div id="Kill" class="game-detail">
+            <button onclick="openTab(event, 'Games')">&lt;</button>
             <h1>Go Kill This Guy</h1>
             <br>
             <img src="GKTGMain.png" style="border-color:#cc9a2d;">
@@ -343,6 +346,77 @@
 
         </div>
         <!-- END LEVEL DESIGN DIV -->
+
+        <!-- START OTHER PROJECTS DIV -->
+        <div id="Other" class="tabcontent">
+        
+        <div role="button" class="half-box" onclick="window.open('https://github.com/bonkybub/chessboard', '_blank')">
+            <div class="box-header">
+            <h2>DirectX Chess Board Render</h2>
+            </div>
+            <div class="click-box-content">
+            <img src="ChessBoard.png" style="width:28vw;margin-left:4vw;border-style:outset;">
+            <p><strong>Tools Used:</strong> C++, DirectX</p>
+            <p><strong>Project Date:</strong> April 2025</p>
+            <br>
+            <p>This project was completed for an assignment in my Graphics Programming class at Niagara College. We were tasked with 
+                building chess pieces from primitive shaped and displaying them using DirectX in C++. Each piece was constructed using 
+                premade primitives, then given textures and lighting, and was finally placed onto the chess board. You can access the 
+                code on my GitHub by clicking on this box.</p>
+            </div>
+        </div>
+
+        <div role="button" class="half-box" onclick="window.open('https://github.com/bonkybub/primitive-render', '_blank')">
+            <div class="box-header">
+            <h2>DirectX Primitive Render</h2>
+            </div>
+            <div class="click-box-content">
+            <video autoplay loop muted style="border-style:outset;"><source src="3DRender.mp4" type="video/mp4"></video>
+            <br>
+            <p><strong>Tools Used:</strong> C++, DirectX</p>
+            <p><strong>Project Date:</strong> March 2025</p>
+            <br>
+            <p>This project was completed for an assignment in my Graphics Programming class at Niagara College. We were tasked with 
+                using DirectX in C++ to build out 2D and 3D shapes by placing and connecting vertices indidvidually. I built a 
+                hexagonal cylinder, hexagonal cone, and a rhombus pair in order to form a bow and some arrows (inspired by the fairy 
+                bow from <i>The Legend of Zelda: Ocarina of Time</i>). You can click on this box to access the code on my GitHub.</p>
+            </div>
+        </div>
+
+        <div role="button" class="half-box" onclick="window.open('https://github.com/bonkybub/breakout', '_blank')">
+            <div class="box-header">
+            <h2>DirectX Brick Breaker</h2>
+            </div>
+            <div class="click-box-content">
+            <video autoplay loop muted style="border-style:outset;"><source src="Brickbreaker.mp4" type="video/mp4"></video>
+            <p><strong>Tools Used:</strong> C++, DirectX, Inkscape</p>
+            <p><strong>Project Date:</strong> February 2025</p>
+            <br>
+            <p>This project was completed for an assignment in my Graphics Programming class at Niagara College. For this assignment, 
+                we had to recreate brick breaker in C++ using DirectX. This meant manually drawing sprites, setting up collision 
+                bounds and interactions, coding ball and paddle movement, as well as brick breaking functionality. Additionally, I set 
+                up the game to include three levels and powerups for the ball that makes each level harder as you play. I also created 
+                all the art for the sprites using Inkscape. Click this box to access the code on my GitHub and play the build in the Debug folder.</p>
+            </div>
+        </div>
+
+        <div class="half-box">
+            <div class="box-header">
+            <h2>3D Logo Animation</h2>
+            </div>
+            <div class="box-content">
+            <video autoplay loop muted style="border-style:outset;"><source src="LogoAnim.mp4" type="video/mp4" style="border-style:outset;"></video>
+            <p><strong>Tools Used:</strong> 3DS Max</p>
+            <p><strong>Project Date:</strong> October 2022</p>
+            <br>
+            <p>This project was completed for an assignment in my 3D Modelling class at Niagara College. For this assignment, 
+                we had to create a logo animation in 3D using 3DS Max. I decided to go for a spy-like logo where several small 
+                rectangles move into place to formulate the letters for the logo.</p>
+            </div>
+        </div>
+
+        </div>
+        <!-- END OTHER PROJECTS DIV -->
 
     </div> <!-- End of main-container -->
 
