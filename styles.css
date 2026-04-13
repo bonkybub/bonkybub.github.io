@@ -129,6 +129,15 @@ aside img {
   overflow: hidden; 
 }
 
+.full-box {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .half-box {
   background-color: #fff;
   border-radius: 8px;
@@ -158,6 +167,16 @@ aside img {
   padding: 1rem;
   overflow-y: auto;
   flex: 1;
+}
+
+.full-box p {
+  padding: 16px;
+}
+
+.full-box img, video {
+  width: 36vw;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .half-box img {
