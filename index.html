@@ -19,14 +19,20 @@
 </head>
 <body>
 
+    <!-- ZOOM IMAGE -->
+    <div id="zoomImgBg" class="zoom-bg" style="pointer-events: auto;" onclick="endZoom()"></div>
+    <img id="zoomImg" class="zoom-img" style="pointer-events: auto;">
+    <div id="zoomImgArrows" style="display: none; z-index: 1; pointer-events: auto;">
+        <a class="prev" style="position: fixed; font-size: 58px; color: white; left: 6vw;" onclick="zoomShow.previous(); zoomSlideshow(zoomShow);">&lt;</a>
+        <a class="next" style="position: fixed; font-size: 58px; color: white; right: 6vw;" onclick="zoomShow.next(); zoomSlideshow(zoomShow)">&gt;</a>
+    </div>
+
     <!-- HEADER -->
     <!-- Notes:
         <header> defines the top section for page title or intro content. -->
     <header>
         Matt Games
     </header>
-
-
 
     <!-- NAVIGATION BAR -->
     <!-- Notes:
@@ -92,52 +98,52 @@
         <!-- START GAMES DIV -->
         <div id="Games" class="tabcontent">
         
-        <div role="button" class="third-box" onclick="showGame('Maid')">
-            <div class="box-header" style="background-color:#94e6ff;">
-            <h2>Maid Mayhem</h2>
+            <div role="button" class="third-box" onclick="showGame('Maid')">
+                <div class="box-header" style="background-color:#94e6ff;">
+                    <h2>Maid Mayhem</h2>
+                </div>
+                <div class="click-box-content">
+                    <img src="MaidMayhemPoster.png" style="border-style:outset;border-color:#189cc4;">
+                    <p style="text-align:center;">1st Place People's Choice & 2nd Place Achievement in Audio - Level Up Showcase 2026</p>
+                    <br>
+                    <p>Maid Mayhem is a 2-player to 4-player competitive party game where you take on the role of a big buff bald maid.
+                    Your task is to clean as much of old lady Twiggy's house as you can in 3 minutes by whacking dirty furniture and hitting away your competition.</p>
+                </div>
             </div>
-            <div class="click-box-content">
-            <img src="MaidMayhemPoster.png" style="border-style:outset;border-color:#189cc4;">
-            <p style="text-align:center;">1st Place People's Choice & 2nd Place Achievement in Audio - Level Up Showcase 2026</p>
-            <br>
-            <p>Maid Mayhem is a 2-player to 4-player competitive party game where you take on the role of a big buff bald maid.
-                Your task is to clean as much of old lady Twiggy's house as you can in 3 minutes by whacking dirty furniture and hitting away your competition.</p>
-            </div>
-        </div>
 
-        <div role="button" class="third-box" onclick="showGame('Dino')">
-            <div class="box-header" style="background-color:#fab0a5;">
-            <h2>Dino Dash</h2>
+            <div role="button" class="third-box" onclick="showGame('Dino')">
+                <div class="box-header" style="background-color:#fab0a5;">
+                    <h2>Dino Dash</h2>
+                </div>
+                <div class="click-box-content">
+                    <img src="DinoDashMenu.png" style="border-style:outset;border-color:#d4341c;">
+                    <br><br>
+                    <p>Dino Dash is a single-player 2.5D platformer. A little red raptor gets lost in the jungle and it's your job to help get it back to its nest.
+                    Run, jump, and dash through enemies to find a way back home.</p>
+                </div>
             </div>
-            <div class="click-box-content">
-            <img src="DinoDashMenu.png" style="border-style:outset;border-color:#d4341c;">
-            <br><br>
-            <p>Dino Dash is a single-player 2.5D platformer. A little red raptor gets lost in the jungle and it's your job to help get it back to its nest.
-                Run, jump, and dash through enemies to find a way back home.</p>
-            </div>
-        </div>
 
-        <div role="button" class="third-box" onclick="showGame('Kill')">
-            <div class="box-header" style="background-color:#fadfa5;">
-            <h2>Go Kill This Guy</h2>
+            <div role="button" class="third-box" onclick="showGame('Kill')">
+                <div class="box-header" style="background-color:#fadfa5;">
+                    <h2>Go Kill This Guy</h2>
+                </div>
+                <div class="click-box-content">
+                    <img src="GKTGMain.png" style="border-style:outset;border-color:#cc9a2d;">
+                    <br><br>
+                    <p>In Go Kill This Guy, take on the role of Hevyn and Hel, an angel-devil duo, as they proceed through tests to acquire their exorcist licence.
+                     Vanquish an array of vile creatures for their many crimes in this short 2D platformer-shooter.</p>
+                </div>
             </div>
-            <div class="click-box-content">
-            <img src="GKTGMain.png" style="border-style:outset;border-color:#cc9a2d;">
-            <br><br>
-            <p>In Go Kill This Guy, take on the role of Hevyn and Hel, an angel-devil duo, as they proceed through tests to acquire their exorcist licence.
-                 Vanquish an array of vile creatures for their many crimes in this short 2D platformer-shooter.</p>
-            </div>
-        </div>
 
         </div>
         <!-- END GAMES DIV -->
 
         <!-- START MAID MAYHEM DETAILS -->
-        <div id="Maid" class="game-detail">
+        <div id="Maid" class="detail">
             <button onclick="openTab(event, 'Games')">&lt;</button>
             <h1>Maid Mayhem</h1>
             <br>
-            <img src="MaidMayhemPoster.png" style="border-color:#189cc4;">
+            <img src="MaidMayhemPoster.png" style="border-color:#189cc4;" onclick="zoomImage('MaidMayhemPoster.png')">
             <br><br>
             <p>Maid Mayhem is a 2-player to 4-player competitive party game where you take on the role of a big buff bald maid.
                 Your task is to clean as much of old lady Twiggy's house as you can in 3 minutes by whacking dirty furniture and hitting away your competition.</p>
@@ -154,7 +160,7 @@
             <p>I took on the role as creative director for the team to lead the overall vision of the game and maintain cohesion between the 
                 mechanics, artistic direction, and audio components to align with the intended player experience.</p>
             <br><br>
-            <img src="MMGameplay.png" style="border-color:#189cc4;">
+            <img src="MMGameplay.png" style="border-color:#189cc4;" onclick="zoomImage('MMGameplay.png')">
             <br><br>
             <p>I was a core member of the design team, planning out how our various mechanics would work together and fit with the
                 core pillars of the game. I also participated in the many iterations of level design for the dirty house.</p>
@@ -163,7 +169,7 @@
                 the tutorial, awards, and dynamic camera, as well as a shader to overlay a coloured dirt texture on top of an object (see below). 
                 However, my primary areas of work were in implementing the character animations, as well as the various soundtracks and their transitions.</p>
             <br><br>
-            <img src="MMDirtShader.png" style="border-color:#189cc4;">
+            <img src="MMDirtShader.png" style="border-color:#189cc4;" onclick="zoomImage('MMDirtShader.png')">
             <br><br>
             <p>I also worked on some character animations for the unarmed, mop, and feather duster weapons in the game (as you can see below).</p>
             <br><br>
@@ -179,11 +185,11 @@
         <!-- END MAID MAYHEM DETAILS -->
 
         <!-- START DINO DASH DETAILS -->
-        <div id="Dino" class="game-detail">
+        <div id="Dino" class="detail">
             <button onclick="openTab(event, 'Games')">&lt;</button>
             <h1>Dino Dash</h1>
             <br>
-            <img src="DDPoster.png" style="width:20vw;border-color:#d4341c;">
+            <img src="DDPoster.png" style="width:20vw;border-color:#d4341c;" onclick="zoomImage('DDPoster.png')">
             <br><br>
             <p>Dino Dash is a single-player 2.5D platformer. A little red raptor gets lost in the jungle and it's your job to help get it back to its nest.
                 Run, jump, and dash through enemies to find a way back home.</p>
@@ -198,7 +204,7 @@
             <p>Dino Dash was made in fourth months for our Rapid Game Dev class at Niagara College. It is a 2.5D sidescroller where you play as a 
                 little red raptor that can dash around to clear gaps and defeat foes.</p>
             <br><br>
-            <img src="DinoDashMenu.png" style="border-color:#d4341c;">
+            <img src="DinoDashMenu.png" style="border-color:#d4341c;" onclick="zoomImage('DinoDashMenu.png')">
             <br><br>
             <p>My primary roles on the team were that of producer and design lead. I communicated frequently with the team to ensure that
                 production was coming along smoothly and kept track of task completion in Hansoft.</p>
@@ -206,7 +212,7 @@
             <p>As design lead, my main tasks involved polishing the mechanics and gameplay experience to fit into the "speedy" feel of 
                 the game. This required several small tweaks, as well as some cuts for mechanics that did not fit the core pillars.</p>
             <br><br>
-            <img src="DDGameplay.png" style="border-color:#d4341c;">
+            <img src="DDGameplay.png" style="border-color:#d4341c;" onclick="zoomImage('DDGameplay.png')">
             <br><br>
             <p>As a programmer on the team, I helped adjust several scripts to add impact and responsiveness to the many mechanics of the game. 
                 I was also in charge of implementing character animations and event scripting for in-game cutscenes.</p>
@@ -216,7 +222,7 @@
             <p>Additionally, I was in charge of level design on the team. From paper drawings to in-engine blockouts, and the many tweaks and 
                 iterations that followed.</p>
             <br><br>
-            <img src="DDLevelPaper.jpg" style="width:22vw;display:inline-block;border-color:#d4341c;">
+            <img src="DDLevelPaper.jpg" style="width:22vw;display:inline-block;border-color:#d4341c;" onclick="zoomImage('DDLevelPaper.jpg')">
             <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#d4341c;"><source src="DDLevel.mp4" type="video/mp4"></video>
             <br><br>
             <img src="DDAppIcon.png" style="width:3vw;border:none;">
@@ -224,11 +230,11 @@
         <!-- END DINO DASH DETAILS -->
 
         <!-- START GO KILL THIS GUY DETAILS -->
-        <div id="Kill" class="game-detail">
+        <div id="Kill" class="detail">
             <button onclick="openTab(event, 'Games')">&lt;</button>
             <h1>Go Kill This Guy</h1>
             <br>
-            <img src="GKTGMain.png" style="border-color:#cc9a2d;">
+            <img src="GKTGMain.png" style="border-color:#cc9a2d;" onclick="zoomImage('GKTGMain.png')">
             <br><br>
             <p style="text-align: left;"><b>Roles:</b> Producer, Lead Programmer, Environment Artist, QA Tester</p>
             <p style="text-align: left;"><b>Project Time Frame:</b> Jan. 2023 - Apr. 2023</p>
@@ -244,19 +250,19 @@
                 organizing the team schedule for the four months, taking into account our deadlines for other classes and showcase 
                 opportunities.</p>
             <br><br>
-            <img src="GKTGGameplay3.png" style="border-color:#cc9a2d;">
+            <img src="GKTGGameplay3.png" style="border-color:#cc9a2d;" onclick="zoomImage('GKTGGameplay3.png')">
             <br><br>
             <p>I was the main programmer for this team, contributing to the player controller, enemy AI, level mechanics, animations, textboes, event scripting, 
                 you name it, I worked on it (apart from the sound effects implementation).</p>
             <br><br>
-            <img src="GKTGGameplay2.png" style="border-color:#cc9a2d;">
+            <img src="GKTGGameplay2.png" style="border-color:#cc9a2d;" onclick="zoomImage('GKTGGameplay2.png')">
             <br><br>
             <p>Due to the small size of the team, I also needed to help with other areas of development. This led to me being in charge of level 
                 design on the team, as well as being the primary background environment artist.</p>
             <br><br>
-            <img src="GKTGGameplay1.png" style="border-color:#cc9a2d;">
+            <img src="GKTGGameplay1.png" style="border-color:#cc9a2d;" onclick="zoomImage('GKTGGameplay1.png')">
             <br>
-            <img src="GKTGGameplay4.png" style="border-color:#cc9a2d;">
+            <img src="GKTGGameplay4.png" style="border-color:#cc9a2d;" onclick="zoomImage('GKTGGameplay4.png')">
             <br><br>
             <p>This was the first proper game I ever worked on, so the final product holds a very special place in my heart.</p>
             <br>
@@ -267,85 +273,505 @@
         <!-- START LEVEL DESIGN DIV -->
         <div id="Level" class="tabcontent">
 
-        <!-- CLOUDWORKS CASINO -->
-        <div class="full-box">
-            <div class="box-header">
-            <h2>CloudWorks Casino</h2>
-            </div>
-            <div>
-                <div class="box-content" style="display:flex;">
-                    <div>
-                        <br><br><br>
-                        <video autoplay loop muted><source src="CCQuickShot.mp4" type="video/mp4"></video>
-                    </div>
-                    <div>
-                        <p><strong style="color:#d4341c">CloudWorks Casino</strong> is a level design project that I created for Ubisoft NEXT 2026 between the months of September 2025 and January 2026.</p>
-                        <p>I ranked <u>third</u> overall in the competition, making it through every round and ultimately being invited to the Ubisoft Toronto 
-                            studio building for a tour and the awards ceremony!</p>
-                        <p>For this year's submission, participants were tasked with creating a linear level for a Third-Person Stealth Action-Adventure game, 
-                            set in a grounded and realistic world. In this level, the player is meant to infiltrate a location while managing traversal 
-                            challenges and keeping mind of a light hostile presence.</p>
-                        <p>I participated in Ubisoft NEXT the year prior, but I did not make it past the first round. With this submission, 
-                            I wanted to try to put significantly more thought and intentionality into the depth of the level, while keeping my 
-                            executiuon clean.</p>
-                        <p>I started off with listing out the requirements and constraints. Using the MDA framework, I outlined my intended experience and emotions 
-                            for the player, as well as design pillars to guide my thought process. I proceeded to brainstorm potential environments and stories 
-                            and laid out a rough bubble map and pacing graph to detail how to make each area distinct, impactful, and important to the overarching 
-                            experience of the level.</p>
-                        <p>You can read through my unfiltered design process <a href="https://drive.google.com/file/d/1XBxZfEavy9qICaa2tWyjoXxVsuNlLytL/view?usp=sharing" target="_blank" rel="noopener noreferrer">here</a>!</p>
+            <!-- CLOUDWORKS CASINO -->
+            <div role="button" class="full-box" onclick="showLevel('CC'); ccMdd.reset(); ccCl.reset(); ccDb.reset(); ccPt.reset();">
+                <div class="box-header">
+                    <h2>Ubisoft NEXT 2026 - CloudWorks Casino</h2>
+                </div>
+                <div>
+                    <div class="click-box-content" style="display:flex;">
+                        <div>
+                            <video autoplay loop muted><source src="CCQuickShot.mp4" type="video/mp4"></video>
+                        </div>
+                        <div style="top: 50%; bottom: 50%;">
+                            <p>
+                                <strong style="color:#d4341c">CloudWorks Casino</strong> is a level design project that I created for Ubisoft NEXT 2026 between the 
+                                months of September 2025 and January 2026.</p>
+                            <p>
+                                I ranked <u>third</u> overall in the competition, making it through every round and ultimately being invited to the Ubisoft Toronto
+                                studio building for a tour and the awards ceremony!
+                            </p>
+                            <p>
+                                For this year's submission, participants were tasked with creating a linear level for a Third-Person Stealth Action-Adventure game,
+                                set in a grounded and realistic world. In this level, the player is meant to overcome traversal challenges in order to infiltrate a 
+                                location whilst avoiding a light hostile presence.
+                            </p>
+                            <p>
+                                Click here to read more about my design process!
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="box-content">
-                    <p>The first stage required that we create a Mission Design Document, complete with top-down level maps, reference images, and any 
-                        additional component that showcases our design process, all made using Inkscape. You can take a look at my 
-                        <a href="https://drive.google.com/file/d/1MEsVjx1Yo4CMdmKR4NO-0I_Z4C81G6XO/view?usp=sharing" target="_blank" rel="noopener noreferrer">Mission Design Document</a> here.</p>
-                    <p>In the following stage, we were asked to create a playable 3D blockout of our level in Unreal Engine 5. This was my first time using 
-                        Unreal Engine, so there was a lot of learning involved throughout the process, but I am quite happy with the final result.</p>
-                    <p>While the core aspect of this stage was to test the playability and enjoyment of our levels in practice, it was also a test of 
-                       how we receive and iterate on feedback. I outlined how I took feedback from playtesters and how that impacted my design decisions 
-                       in my changelist and playtest report, both of which were required to be handed in.</p>
-                    <p>If you wish to check out my final changelist, playtest report, debugging comments, and the final playable build, click this 
-                        <a href="https://drive.google.com/file/d/1K_3WgY6dXq1eJ_QqFIQN9PEdyowH39Lq/view?usp=sharing" target="_blank" rel="noopener noreferrer">link</a> to download them.</p>
-                </div>
             </div>
-        </div>
 
-        <!-- TRIALS OF LIGHT -->
-        <div class="full-box">
-            <div class="box-header">
-            <h2>Trials of Light</h2>
-            </div>
-            <div>
-                <div class="box-content" style="display:flex;">
-                    <div>
-                        <p><strong style="color:#cc9a2d">Trials of Light</strong> is a project I completed for my Level Design course at Brock University between the 
-                            months of November 2025 and December 2025.</p>
-                        <p>The assignment was to create a net new level in an existing game franchise. The challenge came in fitting the 
-                            level into the world, story, and gameplay progression, as well as matching the design style and 
-                            difficulty established in the rest of the game.</p>
-                        <p>I chose <i>The Legend of Zelda: Ocarina of Time 3D</i> for this project as it is one of my favourite games and 
-                            I had been studying the game throughout this course. I didn't want to overload myself, as I still had other 
-                            courses and projects that required my attention, so I decided to plan out a mini-dungeon, similar in length 
-                            to the Ice Cavern and Bottom of the Well mini-dungeons in the game.</p>
-                        <p>The primary mechanic of this dungeon is that as the player completes challenges, more light will be unveiled, 
-                            revealing more floors of the dungeon.</p>
-                        <p>This dungeon takes place right before Ganon's Castle and exists underneath the Temple of Time, providing 
-                            the player with an upgraded Master Sword at the end. This is meant to make the finale more climactic, as well 
-                            as tying in the common theme in other Zelda games where the player is granted an enhancement to the sword of evil's bane.</p>
-                        <p>Click on the following <a href="https://drive.google.com/drive/folders/1DrTGbILgobRrspKIU8ZbQfFc6c9Dma5_?usp=sharing" target="_blank" rel="noopener noreferrer">
-                            Level Design Document</a> link to take a look at my design notes, as well as the final submitted level design document 
-                            where I go into further detail on how this level fits into the game, as well as the several diagrams included to 
-                            bring the idea to life.</p>
-                    </div>
-                    <div>
-                        <img src="ToLMain.png">
+            <!-- TRIALS OF LIGHT -->
+            <div role="button" class="full-box" onclick="showLevel('ToL')">
+                <div class="box-header">
+                    <h2>Trials of Light</h2>
+                </div>
+                <div>
+                    <div class="click-box-content" style="display:flex;">
+                        <div>
+                            <p>
+                                <strong style="color:#cc9a2d">Trials of Light</strong> is a project I completed for my Level Design course at Brock University between the
+                                months of November 2025 and December 2025.
+                            </p>
+                            <p>
+                                The assignment was to create a net new level in an existing game franchise. The challenge came in fitting the
+                                level into the world, story, and gameplay progression, as well as matching the design style and
+                                difficulty established in the rest of the game.
+                            </p>
+                            <p>
+                                I chose <i>The Legend of Zelda: Ocarina of Time 3D</i> for this project as it is one of my favourite games and
+                                I had been studying the game throughout this course. I didn't want to overload myself, as I still had other
+                                courses and projects that required my attention, so I decided to plan out a mini-dungeon, similar in length
+                                to the Ice Cavern and Bottom of the Well mini-dungeons in the game.
+                            </p>
+                            <p>
+                                The primary mechanic of this dungeon is that as the player completes challenges, more light will be unveiled,
+                                revealing more floors of the dungeon.
+                            </p>
+                            <p>
+                                This dungeon takes place right before Ganon's Castle and exists underneath the Temple of Time, providing
+                                the player with an upgraded Master Sword at the end. This is meant to make the finale more climactic, as well
+                                as tying in the common theme in other Zelda games where the player is granted an enhancement to the sword of evil's bane.
+                            </p>
+                            <p>
+                                Click on the following <a href="https://drive.google.com/drive/folders/1DrTGbILgobRrspKIU8ZbQfFc6c9Dma5_?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                    Level Design Document
+                                </a> link to take a look at my design notes, as well as the final submitted level design document
+                                where I go into further detail on how this level fits into the game, as well as the several diagrams included to
+                                bring the idea to life.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="ToLMain.png">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         </div>
         <!-- END LEVEL DESIGN DIV -->
+
+        <!-- START CLOUDWORKS CASINO DETAILS-->
+        <div id="CC" class="detail">
+            <button onclick="openTab(event, 'Level')">&lt;</button>
+            <h1>Cloudworks Casino</h1>
+            <br>
+            <video autoplay loop muted><source src="CCQuickShot.mp4" type="video/mp4"></video>
+
+            <br><br>
+
+            <p>
+                <strong style="color:#d4341c">CloudWorks Casino</strong> is a level design project that I created for Ubisoft NEXT 2026 between the 
+                months of September 2025 and January 2026.
+            </p>
+
+            <br>
+
+            <p>
+                I ranked <u>third</u> overall in the competition, making it through every round and ultimately being invited to the Ubisoft Toronto
+                studio building for a tour and the awards ceremony!
+            </p>
+
+            <br>
+
+            <p>
+                For this year's submission, participants were tasked with creating a linear level for a Third-Person Stealth Action-Adventure game,
+                set in a grounded and realistic world. In this level, the player is meant to overcome traversal challenges in order to infiltrate a 
+                location whilst avoiding a light hostile presence.
+            </p>
+
+            <br><br>
+
+            <h2>Planning Mission Design Document</h2>
+
+            <br>
+
+            <p>
+                I decided to create a level set in a casino that leads into a research lab. The idea was for the level to feel like a large descent, 
+                going deeper and deeper into places that you were never supposed to see.
+            </p>
+
+            <br>
+
+            <p>
+                After mapping out the narrative background, general location and environments, and creating guides for designing the level, I developed 
+                the following Mission Design Document. This document includes a 2D map of the level, a list of reference images, a walkthrough, some 
+                diagrams and graphs of the level's progression, and concludes with a few additional notes to illustrate the story and purpose behind 
+                the level.
+            </p>
+
+            <br>
+
+            <div id="ccMddSlides" class="slideshow-holder">
+                <div class="slideshow-container" onclick="zoomSlideshow(ccMdd)">
+                    <div class="slides fade" >
+                        <div class="slidenum">1 / 15</div>
+                        <img src="MDD Images/MDD_page1.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">2 / 15</div>
+                        <img src="MDD Images/MDD_page2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">3 / 15</div>
+                        <img src="MDD Images/MDD_page3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">4 / 15</div>
+                        <img src="MDD Images/MDD_page4.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">5 / 15</div>
+                        <img src="MDD Images/MDD_page5.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">6 / 15</div>
+                        <img src="MDD Images/MDD_page6.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">7 / 15</div>
+                        <img src="MDD Images/MDD_page7.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">8 / 15</div>
+                        <img src="MDD Images/MDD_page8.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">9 / 15</div>
+                        <img src="MDD Images/MDD_page9.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">10 / 15</div>
+                        <img src="MDD Images/MDD_page10.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">11 / 15</div>
+                        <img src="MDD Images/MDD_page11.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">12 / 15</div>
+                        <img src="MDD Images/MDD_page12.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">13 / 15</div>
+                        <img src="MDD Images/MDD_page13.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">14 / 15</div>
+                        <img src="MDD Images/MDD_page14.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">15 / 15</div>
+                        <img src="MDD Images/MDD_page15.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slideshow-overlay"></div>
+                </div>
+
+                <a class="prev" onclick="ccMdd.previous()">&lt;</a>
+                <a class="next" onclick="ccMdd.next()">&gt;</a>
+
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dots" onclick="ccMdd.display(1)"></span>
+                    <span class="dots" onclick="ccMdd.display(2)"></span>
+                    <span class="dots" onclick="ccMdd.display(3)"></span>
+                    <span class="dots" onclick="ccMdd.display(4)"></span>
+                    <span class="dots" onclick="ccMdd.display(5)"></span>
+                    <span class="dots" onclick="ccMdd.display(6)"></span>
+                    <span class="dots" onclick="ccMdd.display(7)"></span>
+                    <span class="dots" onclick="ccMdd.display(8)"></span>
+                    <span class="dots" onclick="ccMdd.display(9)"></span>
+                    <span class="dots" onclick="ccMdd.display(10)"></span>
+                    <span class="dots" onclick="ccMdd.display(11)"></span>
+                    <span class="dots" onclick="ccMdd.display(12)"></span>
+                    <span class="dots" onclick="ccMdd.display(13)"></span>
+                    <span class="dots" onclick="ccMdd.display(14)"></span>
+                    <span class="dots" onclick="ccMdd.display(15)"></span>
+                </div>
+            </div>
+
+            <br><br>
+
+            <h2>Blockout Production</h2>
+
+            <br>
+
+            <p>
+                After receiving some feedback from Ubisoft on my MDD, I shifted focus more towards making realistic and readable environments that fit 
+                together and tell a story while simultaneously guiding the player through the level. I also needed to add more elements to give the player
+                the sense of infiltrating a high-security location. Once I started the blockout in Unreal Engine 5.6, I decided to put more emphasis on 
+                making sure the player felt that they could tell what every room was meant to be, what ever prop communicated about the environment, and 
+                how the enemy guards' actions helped flesh out the world and story.
+            </p>
+
+            <br>
+
+            <p>
+                In order to create the level that I envisioned, I needed to make some tweaks to the provided asset pack. I polished several mechanics 
+                so they worked consistently in my level, I fixed various bugs that appeared, and I added a few mechanics and menus to create a smoother
+                player experience.
+            </p>
+
+            <div id="ccDbSlides" class="slideshow-holder">
+                <div class="slideshow-container" style="width: 50%" onclick="zoomSlideshow(ccDb)">
+                    <div class="slides fade" >
+                        <div class="slidenum" style="color: black">1 / 6</div>
+                        <img src="Debug Images/Debug_page1.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum" style="color: black">2 / 6</div>
+                        <img src="Debug Images/Debug_page2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum" style="color: black">3 / 6</div>
+                        <img src="Debug Images/Debug_page3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum" style="color: black">4 / 6</div>
+                        <img src="Debug Images/Debug_page4.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum" style="color: black">5 / 6</div>
+                        <img src="Debug Images/Debug_page5.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum" style="color: black">6 / 6</div>
+                        <img src="Debug Images/Debug_page6.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slideshow-overlay"></div>
+                </div>
+
+                <a class="prev" onclick="ccDb.previous()">&lt;</a>
+                <a class="next" onclick="ccDb.next()">&gt;</a>
+
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dots" onclick="ccDb.display(1)"></span>
+                    <span class="dots" onclick="ccDb.display(2)"></span>
+                    <span class="dots" onclick="ccDb.display(3)"></span>
+                    <span class="dots" onclick="ccDb.display(4)"></span>
+                    <span class="dots" onclick="ccDb.display(5)"></span>
+                    <span class="dots" onclick="ccDb.display(6)"></span>
+                </div>
+            </div>
+
+            <br><br>
+
+            <p>
+                Once the blockout was done, I reached out to some friends to play through the level. My goal with the playtests was to get an idea of how 
+                intuitive the story and progression feel, and how to further emphasize specific moments.
+            </p>
+
+            <br>
+
+            <p>
+                Overall, the playtests helped me plan out ways to make the level flow more naturally while making it a more memorable and rewarding 
+                experience in general.
+            </p>
+
+            <br>
+
+            <div id="ccPtSlides" class="slideshow-holder">
+                <div class="slideshow-container" style="width: 50%" onclick="zoomSlideshow(ccPt)">
+                    <div class="slides fade" >
+                        <div class="slidenum" style="color: black;">1 / 2</div>
+                        <img src="Playtest Images/Playtest_page1.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum" style="color: black;">2 / 2</div>
+                        <img src="Playtest Images/Playtest_page2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slideshow-overlay"></div>
+                </div>
+
+                <a class="prev" onclick="ccPt.previous()">&lt;</a>
+                <a class="next" onclick="ccPt.next()">&gt;</a>
+
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dots" onclick="ccPt.display(1)"></span>
+                    <span class="dots" onclick="ccPt.display(2)"></span>
+                </div>
+            </div>
+
+            <br><br>
+
+            <p>
+                And after many days of hard work, the blockout was finally complete. I wrote out a changelist to show how the level developed 
+                from 2D map to 3D blockout, adding in several notes about the positioning and roles of enemy guards, how more depth was added 
+                to every challenge, and the ways that player guidance is handled.
+            </p>
+
+            <br>
+
+            <div id="ccClSlides" class="slideshow-holder">
+                <div class="slideshow-container" onclick="zoomSlideshow(ccCl)">
+                    <div class="slides fade" >
+                        <div class="slidenum">1 / 19</div>
+                        <img src="Changelist Images/Changelist_page1.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">2 / 19</div>
+                        <img src="Changelist Images/Changelist_page2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">3 / 19</div>
+                        <img src="Changelist Images/Changelist_page3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">4 / 19</div>
+                        <img src="Changelist Images/Changelist_page4.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">5 / 19</div>
+                        <img src="Changelist Images/Changelist_page5.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">6 / 19</div>
+                        <img src="Changelist Images/Changelist_page6.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">7 / 19</div>
+                        <img src="Changelist Images/Changelist_page7.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">8 / 19</div>
+                        <img src="Changelist Images/Changelist_page8.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">9 / 19</div>
+                        <img src="Changelist Images/Changelist_page9.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">10 / 19</div>
+                        <img src="Changelist Images/Changelist_page10.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">11 / 19</div>
+                        <img src="Changelist Images/Changelist_page11.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">12 / 19</div>
+                        <img src="Changelist Images/Changelist_page12.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade" >
+                        <div class="slidenum">13 / 19</div>
+                        <img src="Changelist Images/Changelist_page13.jpg" style="width:100%" >
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">14 / 19</div>
+                        <img src="Changelist Images/Changelist_page14.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">15 / 19</div>
+                        <img src="Changelist Images/Changelist_page15.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">16 / 19</div>
+                        <img src="Changelist Images/Changelist_page16.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">17 / 19</div>
+                        <img src="Changelist Images/Changelist_page17.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">18 / 19</div>
+                        <img src="Changelist Images/Changelist_page18.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slides fade">
+                        <div class="slidenum">19 / 19</div>
+                        <img src="Changelist Images/Changelist_page19.jpg" style="width:100%">
+                    </div>
+
+                    <div class="slideshow-overlay"></div>
+                </div>
+
+                <a class="prev" onclick="ccCl.previous()">&lt;</a>
+                <a class="next" onclick="ccCl.next()">&gt;</a>
+
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dots" onclick="ccCl.display(1)"></span>
+                    <span class="dots" onclick="ccCl.display(2)"></span>
+                    <span class="dots" onclick="ccCl.display(3)"></span>
+                    <span class="dots" onclick="ccCl.display(4)"></span>
+                    <span class="dots" onclick="ccCl.display(5)"></span>
+                    <span class="dots" onclick="ccCl.display(6)"></span>
+                    <span class="dots" onclick="ccCl.display(7)"></span>
+                    <span class="dots" onclick="ccCl.display(8)"></span>
+                    <span class="dots" onclick="ccCl.display(9)"></span>
+                    <span class="dots" onclick="ccCl.display(10)"></span>
+                    <span class="dots" onclick="ccCl.display(11)"></span>
+                    <span class="dots" onclick="ccCl.display(12)"></span>
+                    <span class="dots" onclick="ccCl.display(13)"></span>
+                    <span class="dots" onclick="ccCl.display(14)"></span>
+                    <span class="dots" onclick="ccCl.display(15)"></span>
+                    <span class="dots" onclick="ccCl.display(16)"></span>
+                    <span class="dots" onclick="ccCl.display(17)"></span>
+                    <span class="dots" onclick="ccCl.display(18)"></span>
+                    <span class="dots" onclick="ccCl.display(19)"></span>
+                </div>
+            </div>
+
+            <br><br>
+
+            <p>
+                I had so much fun working on this level and it taught me a lot about how to develop a detailed level concept and iterate on it 
+                to create a substantial blockout. This was my first time designing a level of this scale, sco I am very proud of ranking third 
+                at Ubisoft NEXT and I am excited to apply what I learned here to my future level design projects.
+            </p>
+
+            <br><br>
+        </div>
+        <!-- END CLOUDWORKS CASINO DETAILS-->
 
         <!-- START OTHER PROJECTS DIV -->
         <div id="Other" class="tabcontent">
@@ -444,11 +870,12 @@
         evt.currentTarget.className += " active";
 
         hideGames();
+        hideLevels();
     }
 
     function showGame(gameName) {
         var i, gamedetails;
-        gamedetails = document.getElementsByClassName("game-detail")
+        gamedetails = document.getElementsByClassName("detail")
         for (i = 0; i < gamedetails.length; i++) {
             gamedetails[i].style.display = "none";
         }
@@ -461,6 +888,109 @@
         document.getElementById("Dino").style.display = "none";
         document.getElementById("Kill").style.display = "none";
     }
+
+    function showLevel(levelName) {
+        var i, leveldetails;
+        leveldetails = document.getElementsByClassName("detail")
+        for (i = 0; i < leveldetails.length; i++) {
+            leveldetails[i].style.display = "none";
+        }
+        document.getElementById("Level").style.display = "none";
+        document.getElementById(levelName).style.display = "block";
+    }
+
+    function hideLevels() {
+        document.getElementById("CC").style.display = "none";
+        document.getElementById("ToL").style.display = "none";
+    }
+
+    // image zoom
+    function zoomImage(src) {
+        let zoomImg = document.getElementById("zoomImg");
+        let zoomBg = document.getElementById("zoomImgBg");
+        zoomImg.style.display = "block";
+        zoomBg.style.display = "block";
+        zoomImg.src = src;
+    }
+
+    function zoomSlideshow(slideshow) {
+        zoomShow = slideshow;
+        let container = document.getElementById(slideshow.slidesName);
+        let images = container.getElementsByTagName("img");
+        let zoomImg = document.getElementById("zoomImg");
+        let zoomBg = document.getElementById("zoomImgBg");
+        let zoomArrows = document.getElementById("zoomImgArrows");
+        zoomImg.style.display = "block";
+        zoomBg.style.display = "block";
+        zoomArrows.style.display = "block";
+        
+        if (slideshow.index < 1) { slideshow.index = images.length; }
+        if (slideshow.index > images.length) { slideshow.index = 1; }
+
+        zoomImg.src = images[slideshow.index - 1].src;
+    }
+
+    function endZoom() {
+        let zoomImg = document.getElementById("zoomImg");
+        let zoomBg = document.getElementById("zoomImgBg");
+        let zoomArrows = document.getElementById("zoomImgArrows");
+        zoomImg.style.display = "none";
+        zoomBg.style.display = "none";
+        zoomArrows.style.display = "none";
+    }
+
+    // slides
+    const slideSet = {
+        slidesName: "slides",
+        index: 1,
+        show: function(n) {
+            let i;
+            let slideshow = document.getElementById(this.slidesName);
+            let slides = slideshow.getElementsByClassName("slides");
+            let dots = slideshow.getElementsByClassName("dots");
+            this.index = n;
+            if (n > slides.length) {index = 1}
+            if (n < 1) {index = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[index - 1].style.display = "block";
+            dots[index - 1].className += " active";
+        },
+        next: function() {
+            index++;
+            this.show(index);
+        },
+        previous: function() {
+            index--;
+            this.show(index);
+        },
+        display: function(n) {
+            index = n;
+            this.show(index)
+        },
+        reset: function() {
+            index = 1;
+            this.show(index);
+        }
+    };
+
+    let zoomShow;
+
+    const ccMdd = Object.create(slideSet);
+    ccMdd.slidesName = "ccMddSlides";
+
+    const ccCl = Object.create(slideSet);
+    ccCl.slidesName = "ccClSlides";
+
+    const ccDb = Object.create(slideSet);
+    ccDb.slidesName = "ccDbSlides";
+
+    const ccPt = Object.create(slideSet);
+    ccPt.slidesName = "ccPtSlides";
     </script>
 
 </body>
