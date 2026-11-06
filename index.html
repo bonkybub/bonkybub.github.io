@@ -22,6 +22,7 @@
     <!-- ZOOM IMAGE -->
     <div id="zoomImgBg" class="zoom-bg" style="pointer-events: auto;" onclick="endZoom()"></div>
     <img id="zoomImg" class="zoom-img" style="pointer-events: auto;">
+    <video autoplay loop muted id="zoomGIF" class="zoom-img" style="pointer-events: auto;"><source type="video/mp4"></video>
     <div id="zoomImgArrows" style="display: none; z-index: 1; pointer-events: auto;">
         <a class="prev" style="position: fixed; font-size: 58px; color: white; left: 6vw;" onclick="zoomShow.previous(); zoomSlideshow(zoomShow);">&lt;</a>
         <a class="next" style="position: fixed; font-size: 58px; color: white; right: 6vw;" onclick="zoomShow.next(); zoomSlideshow(zoomShow)">&gt;</a>
@@ -182,8 +183,8 @@
             <br><br>
             <p>I also worked on some character animations for the unarmed, mop, and feather duster weapons in the game (as you can see below).</p>
             <br><br>
-            <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#189cc4;"><source src="MMAtkAnim1.mp4" type="video/mp4"></video>
-            <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#189cc4;"><source src="MMAtkAnim2.mp4" type="video/mp4"></video>
+            <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#189cc4;" onclick="zoomGIF('MMAtkAnim1.mp4')"><source src="MMAtkAnim1.mp4" type="video/mp4"></video>
+            <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#189cc4;" onclick="zoomGIF('MMAtkAnim2.mp4')"><source src="MMAtkAnim2.mp4" type="video/mp4"></video>
             <br><br>
             <p>We showed off this game at the Level Up Showcase 2026 for post-secondary school game projects.</p>
             <p>At the end of the night, among over 150 other teams, we were awarded with 1st place People's Choice (the popular vote),
@@ -235,13 +236,13 @@
             <p>As a programmer on the team, I helped adjust several scripts to add impact and responsiveness to the many mechanics of the game. 
                 I was also in charge of implementing character animations and event scripting for in-game cutscenes.</p>
             <br><br>
-            <video autoplay loop muted style="display:inline-block;border-color:#d4341c;"><source src="DDCutscene.mp4" type="video/mp4"></video>
+            <video autoplay loop muted style="display:inline-block;border-color:#d4341c;" onclick="zoomGIF('DDCutscene.mp4')"><source src="DDCutscene.mp4" type="video/mp4"></video>
             <br><br>
             <p>Additionally, I was in charge of level design on the team. From paper drawings to in-engine blockouts, and the many tweaks and 
                 iterations that followed.</p>
             <br><br>
             <img src="DDLevelPaper.jpg" style="width:22vw;display:inline-block;border-color:#d4341c;" onclick="zoomImage('DDLevelPaper.jpg')">
-            <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#d4341c;"><source src="DDLevel.mp4" type="video/mp4"></video>
+            <video autoplay loop muted style="width:25vw;display:inline-block;border-color:#d4341c;" onclick="zoomGIF('DDLevel.mp4')"><source src="DDLevel.mp4" type="video/mp4"></video>
             <br><br>
             <img src="DDAppIcon.png" style="width:3vw;border:none;">
         </div>
@@ -386,7 +387,7 @@
             <button onclick="openTab(event, 'Level')">&lt;</button>
             <h1>Cloudworks Casino</h1>
             <br>
-            <video autoplay loop muted><source src="CCQuickShot.mp4" type="video/mp4"></video>
+            <video autoplay loop muted onclick="zoomGIF('CCQuickShot.mp4')"><source src="CCQuickShot.mp4" type="video/mp4"></video>
 
             <br><br>
 
@@ -970,6 +971,15 @@
         zoomImg.src = src;
     }
 
+    function zoomGIF(src) {
+        let zoomGIF = document.getElementById("zoomGIF");
+        let zoomBg = document.getElementById("zoomImgBg");
+        zoomGIF.style.display = "block";
+        zoomBg.style.display = "block";
+        zoomGIF.src = src;
+        console.log(source);
+    }
+
     function zoomSlideshow(slideshow) {
         zoomShow = slideshow;
         let container = document.getElementById(slideshow.slidesName);
@@ -989,9 +999,11 @@
 
     function endZoom() {
         let zoomImg = document.getElementById("zoomImg");
+        let zoomGIF = document.getElementById("zoomGIF");
         let zoomBg = document.getElementById("zoomImgBg");
         let zoomArrows = document.getElementById("zoomImgArrows");
         zoomImg.style.display = "none";
+        zoomGIF.style.display = "none";
         zoomBg.style.display = "none";
         zoomArrows.style.display = "none";
     }
